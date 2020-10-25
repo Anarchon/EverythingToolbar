@@ -225,7 +225,15 @@ namespace EverythingToolbar
 			{
 				EverythingSearch.Instance.SearchMacro = "folder:";
 			}
-
+			else if (VideosTab.IsSelected)
+			{
+				EverythingSearch.Instance.SearchMacro = "video:";
+			}
+				else if (DocTab.IsSelected)
+			{
+				EverythingSearch.Instance.SearchMacro = "doc:";
+			}
+		
 			StartSearch(EverythingSearch.Instance.SearchTerm);
 		}
 

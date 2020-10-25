@@ -4,34 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="About EverythingToolbar" Height="330" Width="380" ResizeMode="NoResize">
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="88" />
-			<RowDefinition Height="*" />
-			<RowDefinition Height="45" />
-		</Grid.RowDefinitions>
-		<Rectangle Fill="Black"></Rectangle>
-		<TextBlock Text="EverythingToolbar" Padding="25, 0, 0, 0" Foreground="White" FontSize="26" VerticalAlignment="Center" />
-		<Border BorderThickness="0, 1" BorderBrush="#a0a0a0" Grid.Row="1">
-			<StackPanel VerticalAlignment="Center">
-				<StackPanel.Resources>
-					<Style TargetType="{x:Type TextBlock}">
-						<Setter Property="Padding" Value="25,5,0,5"/>
-					</Style>
-				</StackPanel.Resources>
-				<TextBlock>EverythingToolbar</TextBlock>
-				<TextBlock Name="VersionTextBlock"></TextBlock>
-				<TextBlock>Copyright © 2020 Stephan Rumswinkel</TextBlock>
-				<TextBlock>License: MIT</TextBlock>
-				<TextBlock>Website:
-				<Hyperlink NavigateUri="https://www.github.com/stnkl/EverythingToolbar" RequestNavigate="Hyperlink_RequestNavigate">
-					https://www.github.com/stnkl/EverythingToolbar
-				</Hyperlink>
-				</TextBlock>
-			</StackPanel>
-		</Border>
-		<Rectangle Fill="#f0f0f0" Grid.Row="2" />
-		<Button Grid.Row="2" Margin="250, 10, 10, 10" Click="Button_Click">OK</Button>
-	</Grid>
+        Title="About EverythingToolbar" Height="356.836" Width="446" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="88" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="45" />
+        </Grid.RowDefinitions>
+        <Rectangle Fill="Black"></Rectangle>
+        <TextBlock Text="EverythingToolbar" Padding="25, 0, 0, 0" Foreground="White" FontSize="26" VerticalAlignment="Center" Margin="84,21,27,27" />
+        <Border BorderThickness="0, 1" BorderBrush="#a0a0a0" Grid.Row="1">
+            <StackPanel VerticalAlignment="Center">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Padding" Value="25,5,0,6
+                               "/>
+                    </Style>
+                </StackPanel.Resources>
+                <TextBlock x:Name="Namebar" RenderTransformOrigin="0.5,0.5" Height="47" Margin="3,0,0,0"><Run Text="EverythingToolbar"/></TextBlock>
+                <TextBlock x:Name="VersionTextBlock"><Run Text="Übersetzt/modifiziert von Anarchon"/></TextBlock>
+                <TextBlock><Run Text="Copyright © 2020 Stephan Rumswinkel"/></TextBlock>
+                <TextBlock><Run Text="License: MIT"/></TextBlock>
+                <TextBlock ><Run Text="Website: "/><Hyperlink NavigateUri="https://www.github.com/stnkl/EverythingToolbar" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="https://www.github.com/stnkl/EverythingToolbar"/></Hyperlink></TextBlock>
+                <TextBlock ><Run Text="Übersetzung: "/><Hyperlink NavigateUri="https://www.github.com/Anarchon/EverythingToolbar" RequestNavigate="Hyperlink_RequestNavigate"><Run Text="https://www.github.com/Anarchon/EverythingToolbar"/></Hyperlink></TextBlock>
+            </StackPanel>
+        </Border>
+        <Rectangle Fill="#f0f0f0" Grid.Row="2" />
+        <Button Grid.Row="2" Margin="311,10,10,10" Click="Button_Click">OK</Button>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="55" Margin="21,14,0,0" VerticalAlignment="Top" Width="58" Source="EverythingLogoMask.png"/>
+    </Grid>
 </Window>

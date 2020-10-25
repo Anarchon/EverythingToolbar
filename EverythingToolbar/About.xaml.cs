@@ -9,8 +9,10 @@ namespace EverythingToolbar
 		public About()
 		{
 			InitializeComponent();
-
-			VersionTextBlock.Text = "Version " + Assembly.GetExecutingAssembly().GetName().Version;
+			Namebar.Text ="EverythingToolbar   " + Assembly.GetExecutingAssembly().GetName().Version;
+			Namebar.FontSize = 22;
+			
+			
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)

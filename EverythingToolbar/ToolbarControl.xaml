@@ -27,7 +27,7 @@
 								</Grid.ColumnDefinitions>
 								<TextBlock x:Name="logo" Text="⌕" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="26" Foreground="#dadada" Margin="0,-2,0,0" />
 								<ScrollViewer x:Name="PART_ContentHost" Grid.Column="1" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
-								<TextBlock x:Name="watermark" Text="Search with Everything" Grid.Column="1" VerticalAlignment="Center" Foreground="#dadada" IsHitTestVisible="false" TextTrimming="WordEllipsis" />
+								<TextBlock x:Name="watermark" Text="Suche mit Everything" Grid.Column="1" VerticalAlignment="Center" Foreground="#dadada" IsHitTestVisible="false" TextTrimming="WordEllipsis" />
 							</Grid>
 						</Border>
 						<ControlTemplate.Triggers>
@@ -91,10 +91,10 @@
 				</TextBlock>
 				<Grid.ContextMenu>
 					<ContextMenu>
-						<MenuItem Header="Open with..." Click="OpenWith" />
+						<MenuItem Header="Öffnen mit..." Click="OpenWith" />
 						<Separator/>
-						<MenuItem Header="Open Path" Click="OpenFilePath" />
-						<MenuItem Header="Copy Full Name to Clipboard" Click="CopyPathToClipBoard" />
+						<MenuItem Header="Pfad öffnen" Click="OpenFilePath" />
+						<MenuItem Header="Kompletten Pfad in die Zwischenablage kopieren" Click="CopyPathToClipBoard" />
 					</ContextMenu>
 				</Grid.ContextMenu>
 			</Grid>
@@ -148,48 +148,48 @@
 	</UserControl.Resources>
 
 	<Grid>
-		<TextBox Name="keyboardFocusCapture" Opacity="0" IsHitTestVisible="False" />
+		<TextBox Name="keyboardFocusCapture" Opacity="0" IsHitTestVisible="False" Text="d" />
 		<TextBox x:Name="searchBox" Style="{DynamicResource SearchBoxStyle}" LostKeyboardFocus="SearchBox_LostKeyboardFocus" TextChanged="SearchBox_TextChanged">
 			<TextBox.ContextMenu>
 				<ContextMenu>
-					<MenuItem Header="About EverythingToolbar..." Click="OpenAboutWindow" />
+					<MenuItem Header="Über EverythingToolbar..." Click="OpenAboutWindow" />
 					<Separator />
-					<MenuItem Header="Detailed View" IsCheckable="True" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=isDetailedView, Mode=TwoWay}" Click="MenuItem_Click" />
+                    <MenuItem Header="Detaillierte Ansicht" IsCheckable="True" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=isDetailedView, Mode=TwoWay}" Click="MenuItem_Click" />
 					<Separator />
-					<MenuItem Header="_Regular Expressions" IsCheckable="True" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=isRegExEnabled, Mode=TwoWay}" Click="MenuItem_Click" />
-					<MenuItem Header="Match _Case" IsCheckable="True" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=isMatchCase, Mode=TwoWay}" Click="MenuItem_Click" />
-					<MenuItem Header="Match _Path" IsCheckable="True" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=isMatchPath, Mode=TwoWay}" Click="MenuItem_Click" />
-					<MenuItem Header="Match Whole _Word" IsCheckable="True" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=isMatchWholeWord, Mode=TwoWay}" Click="MenuItem_Click" />
+					<MenuItem Header="_RegEX aktivieren" IsCheckable="True" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=isRegExEnabled, Mode=TwoWay}" Click="MenuItem_Click" />
+					<MenuItem Header="_Gross und Kleinschreibung beachten" IsCheckable="True" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=isMatchCase, Mode=TwoWay}" Click="MenuItem_Click" />
+					<MenuItem Header="Ganzen _Pfad beachten" IsCheckable="True" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=isMatchPath, Mode=TwoWay}" Click="MenuItem_Click" />
+					<MenuItem Header="Ganzes _Wort beachten " IsCheckable="True" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=isMatchWholeWord, Mode=TwoWay}" Click="MenuItem_Click" />
 					<Separator />
-					<MenuItem Header="Sort By..." Name="SortByMenu">
-						<MenuItem IsCheckable="True" Header="Name ascending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Name descending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Path ascending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Path descending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Size ascending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Size descending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Extension ascending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Extension descending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Type name ascending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Type name descending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Date created ascending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Date created descending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Date modified ascending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Date modified descending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Attributes ascending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Attributes descending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="File list filename ascending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="File list filename descending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Run count ascending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Run count descending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Date recently changed ascending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Date recently changed descending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Date accessed ascending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Date accessed descending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Date run ascending" Click="MenuItem_SortBy_Click"/>
-						<MenuItem IsCheckable="True" Header="Date run descending" Click="MenuItem_SortBy_Click"/>
-					</MenuItem>
-				</ContextMenu>
+                    <MenuItem Header="Sortieren Nach..." Name="SortByMenu">
+                        <MenuItem IsCheckable="True" Header="Name aufsteigend" Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Name absteigend " Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Pfad aufsteigend" Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Pfad absteigend " Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Grösse aufsteigend" Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Grösse absteigend " Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Erweiterung aufsteigend" Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Erweiterung absteigend " Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Typ aufsteigend" Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Typ absteigend " Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Erstellt am aufsteigend" Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Erstellt am absteigend " Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Änderungsdatum aufsteigend" Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Änderungsdatum absteigend " Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Attribute aufsteigend" Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Attribute absteigend " Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Name der Dateiliste aufsteigend" Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Name der Dateiliste absteigend " Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Anzahl der Ausführungen aufsteigend" Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Anzahl der Ausführungen absteigend " Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Kürzlich geändert aufsteigend" Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Kürzlich geändert absteigend " Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Kürzlich zugegriffen aufsteigend" Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Kürzlich zugegriffen absteigend " Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Ausführungsdatum aufsteigend" Click="MenuItem_SortBy_Click"/>
+                        <MenuItem IsCheckable="True" Header="Ausführungsdatum absteigend " Click="MenuItem_SortBy_Click"/>
+                    </MenuItem>
+                </ContextMenu>
 			</TextBox.ContextMenu>
 		</TextBox>
 
@@ -292,9 +292,11 @@
 									</Setter>
 								</Style>
 							</TabControl.Resources>
-							<TabItem Header="All" Name="AllTab" />
-							<TabItem Header="Files" Name="FilesTab" />
-							<TabItem Header="Folders" Name="FoldersTab" />
+							<TabItem Header="Alles" Name="AllTab" />
+							<TabItem Header="Dateien" Name="FilesTab" />
+							<TabItem Header="Ordner" Name="FoldersTab" />
+                            <TabItem Header="Videos" Name="VideosTab" />
+                            <TabItem Header="Dokumente" Name="DocTab" />
 						</TabControl>
 						<ListView Name="SearchResultsListView"
 							Grid.Row="1"
